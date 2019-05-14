@@ -4,3 +4,4 @@ from .fanball import *  # type: ignore
 from .fanduel import *  # type: ignore
 from .fantasy_draft import *  # type: ignore
 from .yahoo import *  # type: ignore
+from .draftstars import *  # type: ignore
