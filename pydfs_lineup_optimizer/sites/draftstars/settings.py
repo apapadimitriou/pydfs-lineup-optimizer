@@ -1,7 +1,6 @@
 from pydfs_lineup_optimizer.settings import BaseSettings, LineupPosition
 from pydfs_lineup_optimizer.constants import Sport, Site
 from pydfs_lineup_optimizer.sites.sites_registry import SitesRegistry
-from pydfs_lineup_optimizer.lineup_printer import DropLowestLineupPrinter
 
 
 class DraftstarsSettings(BaseSettings):
@@ -13,7 +12,6 @@ class DraftstarsSettings(BaseSettings):
 @SitesRegistry.register_settings
 class DraftstarsAFLSettings(DraftstarsSettings):
     sport = Sport.AFL
-    lineup_printer = DropLowestLineupPrinter
     positions = [
         LineupPosition('FWD', ('FWD', )),
         LineupPosition('FWD', ('FWD', )),
@@ -25,3 +23,17 @@ class DraftstarsAFLSettings(DraftstarsSettings):
         LineupPosition('MID', ('MID', )),
         LineupPosition('RK', ('RK', )),
     ]
+
+
+@SitesRegistry.register_settings
+class DraftstarsGolfSettings(DraftstarsSettings):
+    sport = Sport.GOLF
+    positions = [
+        LineupPosition('G', ('G', )),
+        LineupPosition('G', ('G', )),
+        LineupPosition('G', ('G', )),
+        LineupPosition('G', ('G', )),
+        LineupPosition('G', ('G', )),
+        LineupPosition('G', ('G', ))
+    ]
+

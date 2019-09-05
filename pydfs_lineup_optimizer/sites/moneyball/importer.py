@@ -7,8 +7,8 @@ from pydfs_lineup_optimizer.constants import Site
 
 
 @SitesRegistry.register_csv_importer
-class DraftstarsCSVImporter(CSVImporter):  # pragma: nocover
-    site = Site.DRAFTSTARS
+class MoneyballCSVImporter(CSVImporter):  # pragma: nocover
+    site = Site.MONEYBALL
 
     def import_players(self):
         players = []
