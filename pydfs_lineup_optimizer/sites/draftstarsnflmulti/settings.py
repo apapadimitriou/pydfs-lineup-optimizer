@@ -4,7 +4,7 @@ from pydfs_lineup_optimizer.sites.sites_registry import SitesRegistry
 
 
 class DraftstarsNFLMultiSettings(BaseSettings):
-    site = Site.DRAFTSTARSNFL
+    site = Site.DRAFTSTARSNFLMULTI
     budget = 100000
     max_from_one_team = 4
 
