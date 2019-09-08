@@ -10,7 +10,7 @@ class DraftstarsNFLMultiSettings(BaseSettings):
 
 
 @SitesRegistry.register_settings
-class DraftstarsNFLSettings(DraftstarsNFLSettings):
+class DraftstarsNFLMultiSettings(DraftstarsNFLMultiSettings):
     sport = Sport.FOOTBALL
     positions = [
         LineupPosition('QB', ('QB', )),
