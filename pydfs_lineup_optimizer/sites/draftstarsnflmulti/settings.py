@@ -19,6 +19,6 @@ class DraftstarsNFLMultiSettings(DraftstarsNFLMultiSettings):
         LineupPosition('WR', ('WR', )),
         LineupPosition('TE', ('TE', )),
         LineupPosition('FLEX', ('FLEX', )),
-        LineupPosition('FLEX', ('FLEX',)),
-        LineupPosition('DST', ('DST',))
+        LineupPosition('FLEX', ('FLEX', )),
+        LineupPosition('DST', ('DST', ))
     ]
