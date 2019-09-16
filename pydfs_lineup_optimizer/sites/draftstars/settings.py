@@ -37,3 +37,20 @@ class DraftstarsGolfSettings(DraftstarsSettings):
         LineupPosition('G', ('G', ))
     ]
 
+
+@SitesRegistry.register_settings
+class DraftstarsNBASettings(DraftstarsSettings):
+    sport = Sport.BASKETBALL
+    positions = [
+        LineupPosition('PG', ('PG',)),
+        LineupPosition('PG', ('PG',)),
+        LineupPosition('SG', ('SG',)),
+        LineupPosition('SG', ('SG',)),
+        LineupPosition('SF', ('SF',)),
+        LineupPosition('SF', ('SF',)),
+        LineupPosition('PF', ('PF',)),
+        LineupPosition('PF', ('PF',)),
+        LineupPosition('C', ('C',)),
+    ]
+
+

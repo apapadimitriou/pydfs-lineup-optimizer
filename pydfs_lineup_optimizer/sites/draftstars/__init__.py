@@ -3,5 +3,5 @@ from .settings import *
 
 
 __all__ = [
-    'DraftstarsCSVImporter', 'DraftstarsAFLSettings'
+    'DraftstarsCSVImporter', 'DraftstarsAFLSettings', 'DraftstarsGolfSettings', 'DraftstarsNBASettings'
 ]
