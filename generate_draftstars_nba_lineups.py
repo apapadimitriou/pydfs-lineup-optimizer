@@ -34,9 +34,9 @@ class GenerateDraftstarsLineups:
         for index, row in data.iterrows():
             player = Player(
                 row["Player ID"],
-                row['Name'].split(" ")[0],
-                row['Name'].split(" ")[1] if len(row["Name"].split(" ")) > 1 else "",
-                [row['Position']] if str(row['Position2']) == "nan" else [row['Position'], row['Position2']],
+                row["Name"].split(" ")[0],
+                row["Name"].split(" ")[1] if len(row["Name"].split(" ")) > 1 else "",
+                [row["Position"]] if str(row["Position2"]) == "nan" else [row["Position"], row["Position2"]],
                 row["Team"],
                 row["Price"],
                 row[str(universe)]
