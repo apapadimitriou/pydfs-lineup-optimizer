@@ -307,3 +307,17 @@ class RestrictPositionsForOpposingTeams(OptimizerRule):
                                          if list_intersection(player.positions, second_team_positions)]
                 for variables in product(first_team_variables, second_team_variables):
                     solver.add_constraint(variables, None, SolverSign.LTE, 1)
+
+
+class RestrictPlayersFromSameTeam(OptimizerRule):
+    def apply(self, solver, players_dict):
+        if not self.optimizer.restrict_players_from_same_team:
+            return
+        restricted_players = [self.optimizer.restrict_players_from_same_team]
+        player_count = 0
+        for player, variable in players_dict.items():
+            if player.full_name in restricted_players:
+                player_count += 1
+        solver.add_constraint(player_count, None, SolverSign.EQ, 0)
+
+
