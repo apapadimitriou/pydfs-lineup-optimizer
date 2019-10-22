@@ -144,6 +144,11 @@ class LineupOptimizer(object):
         return self._opposing_teams_position_restriction
 
     @property
+    def players_in_same_team_restriction(self):
+        # type: () -> Optional[Tuple[str, str]]
+        return self._players_in_same_team_restriction
+
+    @property
     def games(self):
         # type: () -> FrozenSet[GameInfo]
         return frozenset(player.game_info for player in self.players if player.game_info)
@@ -369,7 +374,7 @@ class LineupOptimizer(object):
 
     def restrict_players_from_same_team(self, player_1, player_2):
         # type: (str, str) -> None
-        self._players_in_same_team_restriction = (player_1, player_2)
+        self._players_in_same_team_restriction = [player_1, player_2]
         self.add_new_rule(RestrictPlayersFromSameTeam)
 
     def optimize(self, n, max_exposure=None, randomness=False, with_injured=False):

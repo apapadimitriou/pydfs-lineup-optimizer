@@ -313,11 +313,8 @@ class RestrictPlayersFromSameTeam(OptimizerRule):
     def apply(self, solver, players_dict):
         if not self.optimizer.restrict_players_from_same_team:
             return
-        restricted_players = [self.optimizer.restrict_players_from_same_team]
-        player_count = 0
-        for player, variable in players_dict.items():
-            if player.full_name in restricted_players:
-                player_count += 1
-        solver.add_constraint(player_count, None, SolverSign.EQ, 0)
+        rest_players = self.optimizer.players_in_same_team_restriction
+        players_from_team = [variable for player, variable in players_dict.items() if player.full_name in rest_players]
+        solver.add_constraint(players_from_team, None, SolverSign.LTE, 1)
 
 
