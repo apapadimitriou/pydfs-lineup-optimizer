@@ -313,8 +313,15 @@ class RestrictPlayersFromSameTeam(OptimizerRule):
     def apply(self, solver, players_dict):
         if not self.optimizer.restrict_players_from_same_team:
             return
-        rest_players = self.optimizer.players_in_same_team_restriction
-        players_from_team = [variable for player, variable in players_dict.items() if player.full_name in rest_players]
-        solver.add_constraint(players_from_team, None, SolverSign.LTE, 1)
+        restriction = self.optimizer.players_in_same_team_restriction
+        variables = list()
+        print(players_dict)
+        for player_combo in restriction:
+            for player, variable in players_dict.items():
+                if player.full_name in player_combo:
+                    print(variable)
+                    variables.append(variable)
+        # players_from_team = [variable for player, variable in players_dict.items() if player.full_name in restriction]
+        solver.add_constraint(variables, None, SolverSign.LTE, 4)
 
 

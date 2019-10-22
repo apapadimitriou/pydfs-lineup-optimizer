@@ -23,3 +23,18 @@ class MoneyballAFLSettings(MoneyballSettings):
         LineupPosition('RU', ('RU', )),
         LineupPosition('FLEX', ('FWD', 'DEF', 'MID', 'RU'))
     ]
+
+@SitesRegistry.register_settings
+class MoneyballNBASettings(MoneyballSettings):
+    sport = Sport.BASKETBALL
+    positions = [
+        LineupPosition('PG', ('PG',)),
+        LineupPosition('PG', ('PG',)),
+        LineupPosition('SG', ('SG',)),
+        LineupPosition('SG', ('SG',)),
+        LineupPosition('SF', ('SF',)),
+        LineupPosition('SF', ('SF',)),
+        LineupPosition('PF', ('PF',)),
+        LineupPosition('PF', ('PF',)),
+        LineupPosition('C', ('C',)),
+    ]

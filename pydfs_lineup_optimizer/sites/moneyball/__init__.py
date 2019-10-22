@@ -3,5 +3,5 @@ from .settings import *
 
 
 __all__ = [
-    'MoneyballCSVImporter', 'MoneyballAFLSettings'
+    'MoneyballCSVImporter', 'MoneyballAFLSettings', 'MoneyballNBASettings'
 ]
